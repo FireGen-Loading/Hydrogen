@@ -13,13 +13,13 @@ sudo apt install libmpc-dev
 sudo apt install libmpfr-dev
 sudo apt install texinfo
 
-export PREFIX="/usr/local/i386elfgcc"
+cd ..
+export PREFIX="$PWD/i386elfgcc"
 export TARGET=i386-elf
 export PATH="$PREFIX/bin:$PATH"
 
-
-mkdir ../binutils/src
-cd ../binutils/src
+mkdir binutils/src
+cd binutils/src
 
 curl -O http://ftp.gnu.org/gnu/binutils/binutils-2.35.1.tar.gz
 tar xf binutils-2.35.1.tar.gz
@@ -29,7 +29,7 @@ cd binutils-build
 ../binutils-2.35.1/configure --target=$TARGET --enable-interwork --enable-multilib --disable-nls --disable-werror --prefix=$PREFIX 2>&1 | tee configure.log
 sudo make all install 2>&1 | tee make.log
 
-cd ../binutils/src
+cd ..
 curl -O https://ftp.gnu.org/gnu/gcc/gcc-10.2.0/gcc-10.2.0.tar.gz
 tar xf gcc-10.2.0.tar.gz
 
@@ -50,6 +50,7 @@ sudo make install-gcc
 
 echo MAKE INSTALL-TARGET-LIBGCC:
 sudo make install-target-libgcc
-rm -r /tmp/src
+cd ../..
+rm -r src/
 
 export PATH=$PATH:/usr/local/i386elfgcc/bin
