@@ -1,3 +1,4 @@
+@echo "Installing deps..."
 sudo apt install nasm
 
 sudo apt update
@@ -8,8 +9,8 @@ sudo apt install libgmp3-dev
 sudo apt install libmpc-dev
 sudo apt install libmpfr-dev
 sudo apt install texinfo
+@echo "building deps..."
 
-cd ..
 export PREFIX="$PWD/i386elfgcc"
 export TARGET=i386-elf
 export PATH="$PREFIX/bin:$PATH"
