@@ -1,8 +1,6 @@
 sudo apt install nasm
-sudo apt install qemu
-sudo apt-get install qemu-kvm
-
-# GCC cross compiler for i386 systems (might take quite some time, prepare food)
+#sudo apt install qemu
+#sudo apt-get install qemu-kvm
 
 sudo apt update
 sudo apt install build-essential
