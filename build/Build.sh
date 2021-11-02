@@ -13,6 +13,10 @@ export NULL="Null"
 export BOOT="boot"
 
 export PATH=$PATH:/usr/local/i386elfgcc/bin
+mkdir "$BUILD"
+mkdir "$CBUILD"
+mkdir "$ASMBUILD"
+mkdir "$LINK"
 
 i386-elf-gcc -ffreestanding -m32 -g -c "$SRC/$KERNEL.c" -o "$CBUILD/$KERNEL.o"
 
