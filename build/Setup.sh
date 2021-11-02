@@ -1,6 +1,4 @@
 sudo apt install nasm
-#sudo apt install qemu
-#sudo apt-get install qemu-kvm
 
 sudo apt update
 sudo apt install build-essential
