@@ -1,11 +1,13 @@
-.PHONY: setup build clean
+.PHONY: setup build clean import
 
 setup: 
 	@echo "Starting setup..."
-	./build/Setup.sh
+	bash ./build/Setup.sh
 build: 
 	@echo "Building files..."
-	./build/Build.sh
+	bash ./build/Build.sh
 	@echo "Done!"
 clean:
 	rm -r binutils/src
+import:
+	bash ./build/path.sh

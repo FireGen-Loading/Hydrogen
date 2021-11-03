@@ -12,7 +12,7 @@ export KERNEL="kernel"
 export NULL="Null"
 export BOOT="boot"
 
-export PATH=$PATH:/usr/local/i386elfgcc/bin
+export PATH=$PATH:$PWD/i386elfgcc/bin
 mkdir "$BUILD"
 mkdir "$CBUILD"
 mkdir "$ASMBUILD"

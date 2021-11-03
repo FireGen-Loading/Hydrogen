@@ -57,4 +57,4 @@ echo "MAKE INSTALL-TARGET-LIBGCC"
 sudo make install-target-libgcc
 
 echo "Exporting path $PREFIX"
-export PATH="$PATH:$PREFIX"
+export PATH="$PATH:$PREFIX/bin"
