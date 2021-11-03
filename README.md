@@ -2,8 +2,6 @@
 idk really 
 
 ## Building
-1. open terminal in the git root folder
-2. Setup env with
-> make Setup
-or if you don't have make
-> ./Start.sh
+1. run ```$ ./Start.sh ```
+2. run ```$ make build ```
+3. the kernel is in `./bin/kernel.bin`
