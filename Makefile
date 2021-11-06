@@ -2,12 +2,14 @@
 
 setup: 
 	@echo "Starting setup..."
-	bash ./build/Setup.sh
+	bash ./scripts/Setup.sh
 build: 
 	@echo "Building files..."
-	bash ./build/Build.sh
+	bash ./scripts/Build.sh
 	@echo "Done!"
 clean:
-	rm -r binutils/src
+	@echo "cleaning trash files..."
+	bash ./scripts/clean.sh
+	@echo "done cleaning"
 import:
-	bash ./build/path.sh
+	bash ./scripts/path.sh

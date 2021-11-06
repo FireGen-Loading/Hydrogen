@@ -42,7 +42,7 @@ boot:
 
     mov ah, 2                   ; Bios command code
     mov al, 15                  ; Sectors to load
-    mov dl, [BOOT_DISK ]        ; Disk
+    mov dl, [BOOT_DISK]        ; Disk
     mov ch, 0                   ; Cylinder
     mov dh, 0                   ; Head
     mov cl, 2                   ; Sector
