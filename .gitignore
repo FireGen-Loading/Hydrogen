@@ -1,3 +1,4 @@
 bin/*
 binutils/*
 i386elfgcc/*
+.vscode

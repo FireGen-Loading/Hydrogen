@@ -25,7 +25,7 @@ void RevArr(char *p,int size){
 
 }
 
-char * ItoStr(int x){
+char* ItoStr(int x){
     char Zero = '0';
     char* str = '\0';
     int size = 0;
@@ -42,15 +42,39 @@ char * ItoStr(int x){
     return str;
 }
 
+#define REG_SCREEN_CTRL 0x3D4
+#define REG_SCREEN_DATA 0x3D5
+
+unsigned char CharIn(unsigned short port) {
+    unsigned char result;
+    __asm__("in %%dx, %%ax" : "=a" (result) : "d" (port));
+    return result;
+}
+
+unsigned short ShortIn(unsigned short port) {
+    unsigned short result;
+    __asm__("in %%dx, %%ax" : "=a" (result) : "d" (port));
+    return result;
+}
+
+void ShortOut(unsigned short port , unsigned short data) {
+    __asm__("out %%ax, %%dx" : :"a" (data), "d" (port));
+}
+
+void CharOut(unsigned short port , unsigned char data) {
+    __asm__("out %%ax, %%dx" : :"a" (data), "d" (port));
+}
+
+
 void main(){
     Del_boot();
-    char *Hello = "Hello kernel\0";
+    char *Hello = "Hello kernel ";
     print(Hello);
     
-    char* b = ItoStr(8896055);
-    char* a = "why tho???";
+    char* b = ItoStr(123456978);
     print(b);
 
+    
 
     return ;
 }
